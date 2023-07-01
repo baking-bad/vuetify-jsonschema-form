@@ -1,6 +1,15 @@
 <template>
   <v-container class="examples-container">
-    <example-wrapper v-for="example in examples.filter(e => !e.id.startsWith('_'))" :key="example.key" :params="example" />
+    <div
+      v-for="(examplesGroup, i) in examples"
+      :key="i"
+    >
+      <example-wrapper
+        v-for="(example, j) in examplesGroup.examples"
+        :key="`${i}-${j}`"
+        :params="example"
+      />
+    </div>
   </v-container>
 </template>
 
@@ -12,15 +21,16 @@ import { scrollToHash } from '~/app/router.scrollBehavior.js'
 export default {
   components: { ExampleWrapper },
   data: () => ({ examples }),
-  mounted() {
-    if (this.$route.hash) {
-      location.hash = this.$route.hash
-      scrollToHash(this.$route.hash, false)
-    }
-  },
-  head() {
+  head () {
     return {
       title: 'vjsf - Examples'
+    }
+  },
+  mounted () {
+    // depcrecated now that we use SSR
+    if (this.$route.hash && process.client) {
+      location.hash = this.$route.hash
+      scrollToHash(this.$route.hash, false)
     }
   }
 }
