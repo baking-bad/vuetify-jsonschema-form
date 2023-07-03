@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint --ext js .",
     "lint-fix": "eslint --fix --ext js .",
-    "build": "webpack",
+    "build": "rm -rf dist && webpack && cp lib/VJsf.css dist/main.css",
     "prepare": "npm run lint && npm test && npm run build",
     "postpublish": "gh-pages-multi deploy -v -s doc/dist -t latest",
     "test": "jest",
