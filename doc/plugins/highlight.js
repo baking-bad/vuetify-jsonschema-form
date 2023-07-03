@@ -3,7 +3,7 @@ import Vue from 'vue'
 // import 'highlight.js/styles/monokai-sublime.css'
 // import 'highlight.js/styles/far.css'
 import 'highlight.js/styles/vs2015.css'
-const hljs = require('highlight.js/lib/highlight.js')
+const hljs = require('highlight.js/lib/core')
 hljs.registerLanguage('json', require('highlight.js/lib/languages/json'))
 hljs.registerLanguage('html', require('highlight.js/lib/languages/xml'))
 hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
@@ -19,10 +19,10 @@ const highlight = (el) => {
 
 Vue.directive('hljs', {
   deep: true,
-  bind(el) {
+  bind (el) {
     highlight(el)
   },
-  componentUpdated(el, binding) {
+  componentUpdated (el, binding) {
     highlight(el)
   }
 })

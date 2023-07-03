@@ -10,8 +10,9 @@ const findEl = async (hash, x) => {
     })
 }
 
-export async function scrollToHash(hash, smooth = true) {
+export async function scrollToHash (hash, smooth = true) {
   const el = await findEl(hash)
+  if (!el) return
   if (smooth && 'scrollBehavior' in document.documentElement.style) {
     return window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
   } else {

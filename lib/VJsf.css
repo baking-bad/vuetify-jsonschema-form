@@ -22,3 +22,42 @@
 .vjsf-date-time .v-picker.v-card {
   border-radius: 0;
 }
+
+/* customize readonly fields as simply using disabled=true is not really appropriate */
+.vjsf-property.read-only .theme--light.v-input--is-disabled input, .vjsf-property.read-only .theme--light.v-input--is-disabled textarea, .vjsf-property.read-only .theme--light.v-input--is-disabled .v-select__selection--disabled {
+  color: rgba(0, 0, 0, 0.87);
+}
+.vjsf-property.read-only .theme--dark.v-input--is-disabled input, .vjsf-property.read-only .theme--dark.v-input--is-disabled textarea, .vjsf-property.read-only .theme--dark.v-input--is-disabled .v-select__selection--disabled {
+  color: #FFFFFF;
+}
+.vjsf-property.read-only .theme--light.v-text-field.v-input--is-disabled .v-input__slot {
+  margin-bottom: 0;
+}
+.vjsf-property.read-only .theme--light.v-text-field.v-input--is-disabled .v-input__slot::before {
+  border-image: none;
+  border-color: transparent;
+}
+
+.vjsf-property .vjsf-markdown-input .v-input__slot {
+  display: block;
+}
+
+.vjsf-property .vjsf-markdown-input .EasyMDEContainer .editor-toolbar {
+  border: none;
+  padding: 2px;
+}
+
+.vjsf-property .vjsf-markdown-input .EasyMDEContainer .CodeMirror {
+  border: none;
+}
+
+.vjsf-property .vjsf-markdown-input p:last-child {
+  margin-bottom: 0;
+}
+
+.vjsf-property .vjsf-invisible-alert {
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+}
