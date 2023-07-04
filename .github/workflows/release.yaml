@@ -18,6 +18,5 @@ jobs:
       - uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
-          dry-run: true
           ignore-scripts: true
           strategy: all
