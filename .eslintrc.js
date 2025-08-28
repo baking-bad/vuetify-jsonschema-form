@@ -26,6 +26,7 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     // This rule is required because atom vue-format package remove the space
+    'no-trailing-spaces': 'off',
     'space-before-function-paren': 0,
     "vue/no-v-html": "off",
     "vue/multi-word-component-names": "off",
