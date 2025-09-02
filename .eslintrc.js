@@ -1,7 +1,8 @@
 module.exports = {
   root: true,
   env: {
-    browser: true
+    browser: true,
+    es2020: true,
   },
   "globals": {
     "expect": true
